@@ -1,0 +1,14 @@
+class_name: ApiTester
+modules:
+    enabled:
+        - REST:
+            url: /api/v1
+            depends: Lumen
+        - \Helper\Api
+        - Lumen:
+            environment_file: .env.testing
+#        - Db
+#            dsn: 'mysql:host=localhost;dbname=blog_test'
+#            user: 'root'
+#            password: '786'
+#            dump: tests/_data/dump.sql

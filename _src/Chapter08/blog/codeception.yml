@@ -1,0 +1,25 @@
+paths:
+    tests: tests
+    output: tests/_output
+    data: tests/_data
+    support: tests/_support
+    envs: tests/_envs
+actor_suffix: Tester
+settings:
+#    bootstrap: _bootstrap.php
+    colors: true
+    memory_limit: 1024M
+extensions:
+    enabled:
+        - Codeception\Extension\RunFailed
+modules:
+    enabled:
+#        - Lumen:
+#            environment_file: .env.testing
+        - Db:
+            dsn: 'mysql:host=localhost;dbname=blog_test'
+            user: 'root'
+            password: '786'
+            dump: tests/_data/dump.sql
+            populate:  true
+            cleanup: true
